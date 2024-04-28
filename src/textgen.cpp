@@ -38,11 +38,13 @@ std::string Generator::Text_generator(int maxgen, int time) {
         } else {
             break;
         }
-    return generated_text;
     }
+    return generated_text;
+}
 
-void Generator::trainFromStateTable(const std::map<prefix,
-std::vector<std::string>>& newStateTable) {
+void Generator::trainFromStateTable(
+    const std::map<prefix,
+    std::vector<std::string>>& newStateTable) {
     statetab = newStateTable;
 
     if (!statetab.empty()) {
