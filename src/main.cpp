@@ -10,8 +10,7 @@ int main() {
     std::string text;
     std::string line;
     std::ifstream file("text.txt");
-    while (std::getline(file, line))
-    {
+    while (std::getline(file, line){
         text += line + " ";
     }
     Generator gen;
