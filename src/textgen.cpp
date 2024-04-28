@@ -1,11 +1,11 @@
 // Copyright 2024 Goncharova Anna
 #include <fstream>
-#include <random>
-#include <functional>
+#include "textgen.h"
 #include <time.h>
+#include <random>
 #include <deque>
 #include <vector>
-#include "textgen.h"
+#include <functional>
 #include <iostream>
 
 void Generator::creating_statetab(const std::string& string, int size) {
@@ -38,11 +38,11 @@ std::string Generator::Text_generator(int maxgen, int time) {
             generated_text += suffix[randomIndex] + ' ';
             _prefix.pop_front();
             _prefix.push_back(suffix[randomIndex]);
-        } else 
+        } else {
             break;
-    }
+        }
     return generated_text;
-}
+    }
 
 void Generator::trainFromStateTable(const std::map<prefix,
 std::vector<std::string>>& newStateTable) {
