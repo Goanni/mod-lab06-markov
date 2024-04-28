@@ -30,7 +30,7 @@ TEST(test3, OnceSuffix) {
 }
 TEST(test4, VectorSuffix) {
     Generator generator;
-    std::string text = 
+    std::string text =
     "one two three four five six seven eight nine ten eleven twelve";
     int prefixLength = 2;
     generator.creating_statetab(text, prefixLength);
@@ -44,7 +44,7 @@ TEST(test5, Table) {
     int prefixLength = 2;
     std::map < Generator::prefix, std::vector < std::string >> Statetab = {
     {{"one", "two"}, {"six"}},
-    {{"two", "six"}, {"1", "2","3"}}, 
+    {{"two", "six"}, {"1", "2", "3"}},
     {{"six", "1"}, {"one"}},
     {{"1", "one"}, {"two"}}
     };
