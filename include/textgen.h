@@ -9,7 +9,7 @@
 #include <vector>
 
 class Generator {
-public:
+ public:
     typedef std::deque<std::string> prefix;
     prefix _prefix;
     std::map<prefix, std::vector<std::string> > statetab;
