@@ -1,12 +1,9 @@
 // Copyright 2024 Goncharova Anna
-#include <fstream>
 #include "textgen.h"
 #include <time.h>
 #include <random>
 #include <deque>
 #include <vector>
-#include <functional>
-#include <iostream>
 
 void Generator::creating_statetab(const std::string& string, int size) {
     std::istringstream text(string);
