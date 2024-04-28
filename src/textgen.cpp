@@ -2,12 +2,11 @@
 #include <fstream>
 #include <random>
 #include <functional>
-#include <iostream>
 #include <time.h>
-#include <random>
 #include <deque>
 #include <vector>
 #include "textgen.h"
+#include <iostream>
 
 void Generator::creating_statetab(const std::string& string, int size) {
     std::istringstream text(string);
@@ -30,7 +29,8 @@ std::string Generator::Text_generator(int maxgen, int time) {
     for (int i = 0; i < _prefix.size(); i++) {
         generated_text += _prefix[i] + ' ';
     }
-    for (int i = 0; i < maxgen && statetab.find(_prefix) != statetab.end(); i++) {
+    for (int i = 0; i < maxgen &&
+        statetab.find(_prefix) != statetab.end(); i++) {
         std::vector<std::string> suffix = statetab[_prefix];
         if (!suffix.empty()) {
             std::uniform_int_distribution<> dist(0, suffix.size() - 1);
@@ -38,14 +38,13 @@ std::string Generator::Text_generator(int maxgen, int time) {
             generated_text += suffix[randomIndex] + ' ';
             _prefix.pop_front();
             _prefix.push_back(suffix[randomIndex]);
-        }
-        else 
+        } else 
             break;
     }
     return generated_text;
 }
 
-void Generator::trainFromStateTable(const std::map<prefix, 
+void Generator::trainFromStateTable(const std::map<prefix,
 std::vector<std::string>>& newStateTable) {
     statetab = newStateTable;
 
